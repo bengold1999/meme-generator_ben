@@ -20,13 +20,15 @@
         </section>
         <section class="editor">
             <div class="canvas-container">
-                <canvas class="canvas" width="400" height="300" oninput="setLineTxt()"></canvas>
+                <canvas class="canvas" width="400" height="300"></canvas>
             </div>
-            <input type="text" class="text-meme" placeholder="type here" name="lines-meme" oninput="">
-            <input type="color" id="head" name="head" value="#e66465" />
+            <input type="text" class="text-meme" placeholder="type here" name="lines-meme" oninput="onLineTextChanged()">
+            <input class="text-color" type="color" id="head" name="head" value="#e66465" oninput="onColorPicked(this.value)"/>
             <a href="#" onclick="downloadMeme(this)" download="file-name">Download</a>
-            <button class="btn-increase">+A</button>
-            <button class="btn-decrease">-A</button>
+            <button class="btn-increase" onclick="onIncreaseSize()">+A</button>
+            <button class="btn-decrease" onclick="onDecreaseSize()">-A</button>
+            <button class"btn" onclick="onAddLine()">+</button>
+            <button class"btn" onclick="onSwitchLine()">V</button>
 
         </section>
     </main>
