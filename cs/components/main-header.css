@@ -1,0 +1,21 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: purple;
+    box-shadow: inset 0px -2px 0 black;
+    border-radius: 1%;
+    width: 100%;
+    height: max-content;
+    padding: 0px 20px 0px 20px
+}
+.nav a {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+  
+
+    transition: box-shadow 0.2s;
+    will-change: box-shadow;
+}

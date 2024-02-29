@@ -1,0 +1,15 @@
+.gallery{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: rgb(255, 196, 196);
+    height: 100%;
+}
+
+
+.gallery-container{
+    height: 100%;
+}
+
+.layout-gallery{
+    height: 100%;
+}

@@ -1,0 +1,14 @@
+.editor{
+  
+    margin-top: 10vh;
+
+ 
+}
+
+.editor-kid{
+    gap: 10px;
+}
+
+.btn-user{
+    grid-row-gap: 10px;
+}
