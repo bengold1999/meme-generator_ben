@@ -32,18 +32,19 @@ function createMeme(imgId, imgUrl) {
             {
                 txt: 'line1',
                 size: 40,
-                color: "#e66465",
-                x: 100,
-                y: 100
+                color: "#FFFFFF",
+                x: 200,
+                y: 360
             },
             {
                 txt: 'line2',
                 size: 40,
-                color: "#e66465",
-                x: 100,
-                y: 150
+                color: "#FFFFFF",
+                x:200,
+                y: 40
             }
-        ]
+        ] ,
+        
     }
 
     return gMeme
@@ -69,13 +70,13 @@ function setLineTxt() {
 }
 
 function addLine() {
-    let last = gMeme.lines[gMeme.lines.length - 1];
+    let last = gMeme.lines[gMeme.lines.length -1];
     let positionY = last ? gMeme.lines[gMeme.lines.length - 1].y + 50 : 100
     gMeme.lines.push({
         txt: `line${gMeme.lines.length + 1}`,
         size: 40,
-        color: "#e66465",
-        x: 100,
+        color: "#FFFFFF",
+        x: 200,
         y: positionY
     });
 }
@@ -97,3 +98,13 @@ function decreaseSize() {
     if (gMeme.lines[gMeme.selectedLineIdx].size > 0)
         gMeme.lines[gMeme.selectedLineIdx].size--
 }
+
+
+function deleteLine(elLine){
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    elLine = selectedMeme.lines.splice(selectedMeme.selectedLineIdx,1)
+    console.log(elLine)
+}
+
+

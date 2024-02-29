@@ -22,7 +22,7 @@ function renderMeme() {
 function drawText(line, isSelected) {
     gCtx.save()
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = line.color
+    gCtx.strokeStyle = "black"
 
     gCtx.fillStyle = line.color
 
@@ -33,9 +33,9 @@ function drawText(line, isSelected) {
     if (isSelected) {
         const padding = 5
         const textWidth = gCtx.measureText(line.txt).width
-        gCtx.fillStyle = 'rgba(0,0,0, 0.2)'
-        gCtx.fillRect(line.x - textWidth / 2 - padding, line.y - line.size / 2 - padding, textWidth + padding * 2, line.size + padding * 2)
-
+        // gCtx.strokeStyle = 'rgba(0,0,0, 0.4)'
+        gCtx.strokeRect(line.x - textWidth / 2 - padding, line.y - line.size / 2 - padding, textWidth + padding * 2, line.size + padding * 2)
+     
     }
 
     gCtx.fillText(line.txt, line.x, line.y)
@@ -48,6 +48,7 @@ function onImgSelect(elImg) {
     renderMeme()
     updateUserColor()
     updateUserInput()
+
     showEditor()
 }
 
@@ -129,4 +130,68 @@ function onclickLine(ev) {
     }
 
 }
+
+function updateUserLineUp() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnUp = document.querySelector('.top')
+    userBtnUp = selectedMeme.lines[selectedMeme.selectedLineIdx].y--
+ 
+}
+
+
+function updateUserLineDown() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnDown = document.querySelector('.bottom')
+    userBtnDown = selectedMeme.lines[selectedMeme.selectedLineIdx].y++
+}
+
+function onLineUp() {
+    updateUserLineUp()
+    renderMeme()
+}
+
+function onLineDown() {
+    updateUserLineDown()
+    renderMeme()
+}
+
+function updateUserLineLeft() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnLeft = document.querySelector('.left')
+    userBtnLeft = selectedMeme.lines[selectedMeme.selectedLineIdx].x--
+    console.log(userBtnLeft)
+}
+
+
+function onLineLeft() {
+    updateUserLineLeft()
+    renderMeme()
+}
+
+
+function updateUserLineRight() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnRight = document.querySelector('.right')
+    userBtnRight = selectedMeme.lines[selectedMeme.selectedLineIdx].x++
+    
+}
+
+
+function onLineRight() {
+    updateUserLineRight()
+    renderMeme()
+}
+
+
+
+function onDeleteLine(elLine){
+    deleteLine(elLine)
+    renderMeme()
+
+}
+
 

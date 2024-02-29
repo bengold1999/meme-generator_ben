@@ -11,7 +11,7 @@ onInit()
 
 function showEditor(){
     let elEditor = document.querySelector('.editor')
-    let elGalerry = document.querySelector('.gallery')
+    let elGalerry = document.querySelector('.layout-gallery')
     elEditor.classList.remove('hide')
     elEditor.classList.add('grid')
     elEditor.classList.add('align-center')
@@ -24,7 +24,7 @@ function showEditor(){
 
 function showGallery(){
     let elEditor = document.querySelector('.editor')
-    let elGalerry = document.querySelector('.gallery')
+    let elGalerry = document.querySelector('.layout-gallery')
     elEditor.classList.add('hide')
     elGalerry.classList.remove('hide')
     // elEditor.classList.remove('flex')

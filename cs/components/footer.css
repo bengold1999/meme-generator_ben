@@ -1,11 +1,10 @@
 footer{
-    position: fixed;
-    
-    
-    
+    position:fixed ;
+
+    padding: 0px 20px 0px 20px;
     bottom: 0%;
     background-color: purple;
     box-shadow: inset 0px -2px 0 black;
-    bottom: 0%;
+ 
     width:100%;
 }

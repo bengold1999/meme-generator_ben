@@ -1,11 +1,11 @@
-.main-header {
-    position: fixed;
+header.main-header {
+    position: static;
     top: 0;
     z-index: 1;
     background-color: purple;
     box-shadow: inset 0px -2px 0 black;
-    border-radius: 1%;
-    width: 100%;
+    border-radius: 15%;
+   
     height: max-content;
     padding: 0px 20px 0px 20px
 }

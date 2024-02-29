@@ -26,47 +26,48 @@
             <section class="gallery-container">
                 <section class="gallery ">
                 </section>
-                </section>
             </section>
-            <section class="editor hide ">
+        </section>
+        <section class="editor hide ">
             <section class="editor-kid flex align-center justify-content   ">
                 <div class="canvas-container">
                     <canvas class="canvas" width="400" height="400"></canvas>
                 </div>
                 <section class="user-container flex">
                     <section class="btn-user grid space-between align-center ">
-                        <input type="text" class="text-meme" placeholder="type here" name="lines-meme"
-                            oninput="onLineTextChanged()">
                         <input class="text-color" type="color" id="head" name="head" value="#e66465"
                             oninput="onColorPicked(this.value)" />
-                        <button class="btn Add" onclick="onAddLine()">+</button>
+                        <input type="text" class=" text-meme" placeholder="type here" name="lines-meme"
+                            oninput="onLineTextChanged()">
+                            <button class="btn Add" onclick="onAddLine()">➕</button>
+                        <button class="btn delete" onclick="onDeleteLine(this)">🗑️</button>
                         <section class="arrows grid">
-                            <button class="btn top padding">↑</button>
+                            <button class="btn top padding " onclick="onLineUp(this)">⬆️</button>
                             <section class="arrow sides flex space-between ">
-                                <button class="btn left">←</button>
-                                <button class="btn right">→</button>
+                                <button class="btn left" onclick="onLineLeft()">⬅️</button>
+                                <button class="btn right" onclick="onLineRight()">➡️</button>
                             </section>
-                            <button class="btn bottom">↓</button>
+                            <button class="btn bottom padding " onclick="onLineDown()">⬇️</button>
                         </section>
                         <section>
-                            <section class="btn ">
-                            <a class="" href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
-                            </section>
                             <button class="btn increase" onclick="onIncreaseSize()">+A</button>
                             <button class="btn decrease" onclick="onDecreaseSize()">-A</button>
-                            <button class="btn Add" onclick="onAddLine()">+</button>
-                            <button class="btn switch" onclick="onSwitchLine()">⇋</button>
+
+                            <button class="btn switch" onclick="onSwitchLine()">🔁</button>
+                            <section class="btn ">
+                                <a class="" href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
+                            </section>
 
 
                         </section>
                     </section>
                 </section>
             </section>
-            </section>
+        </section>
         </section>
     </main>
     <footer>
-   
+
         <h3 class="rights-reserved">© 2024 Ben goldberger </a></h3>
     </footer>
 

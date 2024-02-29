@@ -1,15 +1,19 @@
 .gallery{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    background-color: rgb(255, 196, 196);
-    height: 100%;
-}
-
-
-.gallery-container{
-    height: 100%;
-}
-
-.layout-gallery{
-    height: 100%;
-}
+    padding: 1vh;
+     
+ }
+ 
+ 
+ .gallery-container{
+    
+ }
+ 
+ .layout-gallery{
+     background-color: rgba(253, 253, 253, 0.288);
+     border: 1px solid wheat;
+   
+     margin: 5vh;
+     margin-bottom: 10px ;
+     padding: 5vh;
+     border-radius: 10%;
+ }

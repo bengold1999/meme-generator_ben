@@ -1,0 +1,33 @@
+@media (max-width: 540px){
+    .editor-kid{
+  
+     flex-direction: column;
+     gap: 0px;
+     margin: 0;
+     padding: 1em;
+     border-radius: 0;
+
+    }
+
+    
+
+
+    footer{
+      
+        position:static ;
+    }
+
+    canvas{
+        width: 90%;
+        height: 90%;
+    }
+   
+}
+
+/* @media (max-width:800px ){
+
+    footer{
+      
+        position:static ;
+    }
+} */
