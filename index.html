@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cs/main.css">
+    <script src="https://kit.fontawesome.com/e6caf03ad2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,13 +22,35 @@
 
     </header>
     <main>
+        <dialog class="modal btn" >
+            <h1>Alret!</h1>
+            <p>
+                Hey guys before you click on DOWNLOAD
+                Please click on "<i class="fa-solid fa-camera"></i>" 
+                
+            </p>
+            <button class="btn" onclick="closeModal()" >ok</button> 
+        </dialog>
 
-        <section class="layout-gallery">
-            <section class="gallery-container">
-                <section class="gallery ">
-                </section>
-            </section>
+        <section class="gallery-container">
+        <section class="Buttons-gallery">
+            <input list="keywords" id="keywords">
+
+            <datalist id="keywords">
+              <option value="animals">
+              <option value="leaders">
+              <option value="movies">
+              <option value="kids">
+              <option value="other">
+            </datalist>
+            <button class="Clear" onclick="clearFilter()">🧹</button>
+            <button class="flexible" onclick="Onflexable()">i'm flexible</button>
+
         </section>
+        <section class="layout-gallery">
+            <section class="gallery"></section>
+        </section>
+    </section>
         <section class="editor hide ">
             <section class="editor-kid flex align-center justify-content   ">
                 <div class="canvas-container">
@@ -35,12 +58,28 @@
                 </div>
                 <section class="user-container flex">
                     <section class="btn-user grid space-between align-center ">
+                        <section>
                         <input class="text-color" type="color" id="head" name="head" value="#e66465"
                             oninput="onColorPicked(this.value)" />
                         <input type="text" class=" text-meme" placeholder="type here" name="lines-meme"
                             oninput="onLineTextChanged()">
-                            <button class="btn Add" onclick="onAddLine()">➕</button>
+                        </section>
+                        <section>
+                        <button class="btn Add" onclick="onAddLine()">➕</button>
                         <button class="btn delete" onclick="onDeleteLine(this)">🗑️</button>
+                        <button class="btn switch" onclick="onSwitchLine()">🔁</button>
+                        </section>
+                        <section>
+                            <button class="btn left-alignment" onclick="onTextLeft()">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+                            <button class="btn center-alignment" onclick="onTextCenter()">
+                                <i class="fa-solid fa-align-center"></i>
+                            </button>
+                            <button class="btn right-alignment" onclick="onTextRight()">
+                                <i class="fa-solid fa-align-right"></i>
+                            </button>
+                        </section>
                         <section class="arrows grid">
                             <button class="btn top padding " onclick="onLineUp(this)">⬆️</button>
                             <section class="arrow sides flex space-between ">
@@ -53,9 +92,9 @@
                             <button class="btn increase" onclick="onIncreaseSize()">+A</button>
                             <button class="btn decrease" onclick="onDecreaseSize()">-A</button>
 
-                            <button class="btn switch" onclick="onSwitchLine()">🔁</button>
+                            <button class="btn camera" onclick="hideSelectedLine()"><i class="fa-solid fa-camera"></i></button>
                             <section class="btn ">
-                                <a class="" href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
+                                <a class="download" href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
                             </section>
 
 
@@ -68,7 +107,6 @@
     </main>
     <footer>
 
-        <h3 class="rights-reserved">© 2024 Ben goldberger </a></h3>
     </footer>
 
 

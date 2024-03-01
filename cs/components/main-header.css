@@ -4,13 +4,16 @@ header.main-header {
     z-index: 1;
     background-color: purple;
     box-shadow: inset 0px -2px 0 black;
-    border-radius: 15%;
+    border-radius: 50px;
+ 
    
     height: max-content;
     padding: 0px 20px 0px 20px
 }
+
+
 .nav a {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
 

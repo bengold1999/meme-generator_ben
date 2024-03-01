@@ -1,7 +1,7 @@
 'use strict'
 
 let gImgs = [
-    { id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] },
+    { id: 1, url: 'img/1.jpg', keywords: ['kids', 'cat'] },
     { id: 2, url: 'img/2.jpg', keywords: ['funny', 'cat'] },
     { id: 3, url: 'img/3.jpg', keywords: ['funny', 'cat'] },
     { id: 4, url: 'img/4.jpg', keywords: ['funny', 'cat'] },
@@ -27,24 +27,31 @@ function createMeme(imgId, imgUrl) {
     gMeme = {
         selectedImgId: imgId,
         selectedLineIdx: 0,
+        prevSelectedLineIdx: null,
         url: imgUrl,
         lines: [
             {
+                id: makeId(),
                 txt: 'line1',
                 size: 40,
                 color: "#FFFFFF",
                 x: 200,
-                y: 360
+                y: 360,
+
+
             },
             {
+                id: makeId(),
                 txt: 'line2',
                 size: 40,
                 color: "#FFFFFF",
-                x:200,
-                y: 40
+                x: 200,
+                y: 40,
+
+
             }
-        ] ,
-        
+        ],
+
     }
 
     return gMeme
@@ -64,20 +71,20 @@ function setLineTxt() {
     var userText = document.querySelector('.text-meme')
     userText.addEventListener('input', () => {
         if (gMeme.lines.length > 0) {
+
             gMeme.lines[gMeme.selectedLineIdx].txt = userText.value
         }
     })
 }
 
 function addLine() {
-    let last = gMeme.lines[gMeme.lines.length -1];
-    let positionY = last ? gMeme.lines[gMeme.lines.length - 1].y + 50 : 100
     gMeme.lines.push({
+        id: makeId(),
         txt: `line${gMeme.lines.length + 1}`,
         size: 40,
         color: "#FFFFFF",
-        x: 200,
-        y: positionY
+        x: gElCanvas.width / 2,
+        y: gElCanvas.height / 2
     });
 }
 
@@ -100,11 +107,44 @@ function decreaseSize() {
 }
 
 
-function deleteLine(elLine){
+function deleteLine(elLine) {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
-    elLine = selectedMeme.lines.splice(selectedMeme.selectedLineIdx,1)
+    elLine = selectedMeme.lines.splice(selectedMeme.selectedLineIdx, 1)
     console.log(elLine)
 }
 
 
+
+
+function hideSelectedLine() {
+    const selectedMeme = getMeme()
+    selectedMeme.selectedLineIdx = -1
+    renderMeme()
+    document.querySelector('.text-meme').value = ''
+
+
+}
+
+
+
+function flexable() {
+    let randomNumber = getRandomIntInclusive(1, gImgs.length - 1)
+    let randomImg = gImgs.find(img => img.id === randomNumber)
+
+    if (randomImg)
+        createMeme(randomNumber, randomImg.url)
+    renderMeme()
+    updateUserColor()
+    updateUserInput()
+    showEditor()
+}
+
+
+function showMessage(){
+    document.querySelector('.modal').showModal()
+}
+
+function closeModal(){
+    document.querySelector('.modal').close()
+}

@@ -1,10 +1,12 @@
 'use strict'
 let gElCanvas
 let gCtx
+let userPassIt = false
 
 function renderMeme() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
+
 
     const img = new Image()
     img.src = selectedMeme.url
@@ -30,18 +32,44 @@ function drawText(line, isSelected) {
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
-    if (isSelected) {
-        const padding = 5
-        const textWidth = gCtx.measureText(line.txt).width
-        // gCtx.strokeStyle = 'rgba(0,0,0, 0.4)'
-        gCtx.strokeRect(line.x - textWidth / 2 - padding, line.y - line.size / 2 - padding, textWidth + padding * 2, line.size + padding * 2)
-     
-    }
+
+    selectedLine(line, isSelected)
+    // if(isSelected===-1){
+    //     isSelected=1
+    // }
 
     gCtx.fillText(line.txt, line.x, line.y)
     gCtx.strokeText(line.txt, line.x, line.y)
     gCtx.restore()
+
 }
+
+
+
+
+
+function selectedLine(line, isSelected) {
+    if (isSelected) {
+        const padding = 5;
+        gCtx.strokeStyle = "black"
+        const textWidth = gCtx.measureText(line.txt).width
+        gCtx.strokeRect(line.x - textWidth / 2 - padding, line.y - line.size / 2 - padding, textWidth + padding * 2, line.size + padding * 2)
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
 
 function onImgSelect(elImg) {
     createMeme(elImg.id, elImg.src)
@@ -50,6 +78,7 @@ function onImgSelect(elImg) {
     updateUserInput()
 
     showEditor()
+   
 }
 
 function onAddLine() {
@@ -101,16 +130,13 @@ function updateUserColor() {
 function downloadMeme(elLink) {
     elLink.download = 'my-meme'
     const dataUrl = gElCanvas.toDataURL()
-    gCtx.clea
     elLink.href = dataUrl
 }
 
 function onDownloadMeme(elLink) {
+
     downloadMeme(elLink)
 }
-
-
-
 function onclickLine(ev) {
     const pos = getEvPos(ev)
     const meme = getMeme()
@@ -127,6 +153,7 @@ function onclickLine(ev) {
         renderMeme()
         updateUserInput()
         updateUserColor()
+
     }
 
 }
@@ -135,8 +162,8 @@ function updateUserLineUp() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnUp = document.querySelector('.top')
-    userBtnUp = selectedMeme.lines[selectedMeme.selectedLineIdx].y--
- 
+    userBtnUp = selectedMeme.lines[selectedMeme.selectedLineIdx].y -= 5
+
 }
 
 
@@ -144,7 +171,7 @@ function updateUserLineDown() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnDown = document.querySelector('.bottom')
-    userBtnDown = selectedMeme.lines[selectedMeme.selectedLineIdx].y++
+    userBtnDown = selectedMeme.lines[selectedMeme.selectedLineIdx].y += 5
 }
 
 function onLineUp() {
@@ -161,7 +188,7 @@ function updateUserLineLeft() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnLeft = document.querySelector('.left')
-    userBtnLeft = selectedMeme.lines[selectedMeme.selectedLineIdx].x--
+    userBtnLeft = selectedMeme.lines[selectedMeme.selectedLineIdx].x -= 5
     console.log(userBtnLeft)
 }
 
@@ -176,8 +203,8 @@ function updateUserLineRight() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnRight = document.querySelector('.right')
-    userBtnRight = selectedMeme.lines[selectedMeme.selectedLineIdx].x++
-    
+    userBtnRight = selectedMeme.lines[selectedMeme.selectedLineIdx].x += 5
+
 }
 
 
@@ -188,10 +215,62 @@ function onLineRight() {
 
 
 
-function onDeleteLine(elLine){
+function onDeleteLine(elLine) {
     deleteLine(elLine)
     renderMeme()
 
 }
+
+
+
+
+function updateUserTextCenter() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnCenterText = document.querySelector('.center-alignment')
+    userBtnCenterText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = gElCanvas.width / 2
+
+}
+
+
+function onTextCenter() {
+    updateUserTextCenter()
+    renderMeme()
+}
+
+
+function updateUserTextRight() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnRightText = document.querySelector('.right-alignment')
+    userBtnRightText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = gElCanvas.width - 50
+
+}
+
+
+function onTextRight() {
+    updateUserTextRight()
+    renderMeme()
+}
+
+function updateUserTextLeft() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userBtnLeftText = document.querySelector('.left-alignment')
+    userBtnLeftText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = 50
+
+}
+
+
+function onTextLeft() {
+    updateUserTextLeft()
+    renderMeme()
+}
+
+
+function Onflexable(){
+    flexable()
+}
+
 
 

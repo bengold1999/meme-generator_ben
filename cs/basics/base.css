@@ -38,10 +38,11 @@ canvas {
 }
 
 img{
-    width: 20vh;
-    height: 20vh;
+    width: 18vh;
+  
     border-radius: 20%;
-    transition: transform .2s
+    transition: transform .2s;
+    margin: 10px;        
     
 }
 img:hover{

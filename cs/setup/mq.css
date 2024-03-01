@@ -1,4 +1,4 @@
-@media (max-width: 540px){
+@media (max-width: 800px){
     .editor-kid{
   
      flex-direction: column;
@@ -6,11 +6,11 @@
      margin: 0;
      padding: 1em;
      border-radius: 0;
-
+    
     }
 
     
-
+    hea
 
     footer{
       
@@ -18,16 +18,49 @@
     }
 
     canvas{
-        width: 100%;
-        height: 100%;
+    width: 100%;
+      
     }
    
+   
+
+    header a{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+
+
 }
 
-/* @media (max-width:800px ){
 
-    footer{
+@media (min-width: 900px){
+    .editor-kid{
+  
+        flex-direction: row;
+        gap: 10px;
+       
+        ;
       
-        position:static ;
-    }
-} */
+       
+       }
+
+
+       .btn-user{
+        font-size: larger;
+       }
+
+       canvas{
+     
+      
+       }
+
+       
+
+
+       .modal{
+        font-size: 30px;
+        margin-bottom: 550px;
+       }
+   
+}
