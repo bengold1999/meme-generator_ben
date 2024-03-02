@@ -29,8 +29,6 @@
         font-size: 20px;
     }
 
-
-
 }
 
 
@@ -63,4 +61,9 @@
         margin-bottom: 550px;
        }
    
+
+       .gallery-container{
+        margin-right: 15vh;
+        margin-left: 15vh;
+    }
 }

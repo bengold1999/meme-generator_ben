@@ -28,7 +28,8 @@ function drawText(line, isSelected) {
 
     gCtx.fillStyle = line.color
 
-    gCtx.font = `${line.size}px Arial`
+    const fontSize = gElCanvas.width * (line.size / 100)
+    gCtx.font = `${fontSize}px Arial`
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
@@ -38,8 +39,8 @@ function drawText(line, isSelected) {
     //     isSelected=1
     // }
 
-    gCtx.fillText(line.txt, line.x, line.y)
-    gCtx.strokeText(line.txt, line.x, line.y)
+    gCtx.fillText(line.txt, line.x / 100 * gElCanvas.width, line.y / 100 * gElCanvas.height)
+    gCtx.strokeText(line.txt, line.x / 100 * gElCanvas.width, line.y / 100 * gElCanvas.height)
     gCtx.restore()
 
 }
@@ -53,23 +54,12 @@ function selectedLine(line, isSelected) {
         const padding = 5;
         gCtx.strokeStyle = "black"
         const textWidth = gCtx.measureText(line.txt).width
-        gCtx.strokeRect(line.x - textWidth / 2 - padding, line.y - line.size / 2 - padding, textWidth + padding * 2, line.size + padding * 2)
-
-
-
-
-
-
-
-
+        const lineX = line.x / 100 * gElCanvas.width
+        const lineY = line.y / 100 * gElCanvas.height
+        const fontSize = gElCanvas.width * (line.size / 100)
+        gCtx.strokeRect(lineX - textWidth / 2 - padding, lineY - fontSize / 2 - padding, textWidth + padding * 2, fontSize + padding * 2)
     }
 }
-
-
-
-
-
-
 
 function onImgSelect(elImg) {
     createMeme(elImg.id, elImg.src)
@@ -127,23 +117,32 @@ function updateUserColor() {
     userColor.value = selectedMeme.lines[selectedMeme.selectedLineIdx].color
 }
 
-function downloadMeme(elLink) {
-    elLink.download = 'my-meme'
+function downloadMeme() {
+    var a = document.createElement("a")
+    a.download = 'my-meme'
     const dataUrl = gElCanvas.toDataURL()
-    elLink.href = dataUrl
+    a.href = dataUrl
+    a.click()
+    a.remove()
 }
 
-function onDownloadMeme(elLink) {
-
-    downloadMeme(elLink)
+function onDownloadMeme() {
+    hideSelectedLine()
+    setTimeout(()=>{
+        downloadMeme()
+    }, 0)
 }
+
 function onclickLine(ev) {
     const pos = getEvPos(ev)
     const meme = getMeme()
     let lineSelected = false
 
     meme.lines.forEach((line, idx) => {
-        if (Math.abs(pos.y - line.y) < line.size / 2 + 10) {
+        const lineY = line.y / 100 * gElCanvas.height
+        const fontSize = gElCanvas.width * (line.size / 100)
+
+        if (Math.abs(pos.y - lineY) < fontSize / 2 + 10) {
             meme.selectedLineIdx = idx
             lineSelected = true
         }
@@ -228,7 +227,7 @@ function updateUserTextCenter() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnCenterText = document.querySelector('.center-alignment')
-    userBtnCenterText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = gElCanvas.width / 2
+    userBtnCenterText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = 50
 
 }
 
@@ -243,7 +242,7 @@ function updateUserTextRight() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnRightText = document.querySelector('.right-alignment')
-    userBtnRightText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = gElCanvas.width - 50
+    userBtnRightText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = 80
 
 }
 
@@ -257,7 +256,7 @@ function updateUserTextLeft() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
     var userBtnLeftText = document.querySelector('.left-alignment')
-    userBtnLeftText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = 50
+    userBtnLeftText = selectedMeme.lines[selectedMeme.selectedLineIdx].x = 20
 
 }
 
@@ -271,6 +270,3 @@ function onTextLeft() {
 function Onflexable(){
     flexable()
 }
-
-
-

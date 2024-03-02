@@ -5,7 +5,7 @@ header.main-header {
     background-color: purple;
     box-shadow: inset 0px -2px 0 black;
     border-radius: 50px;
- 
+    width: 100%;
    
     height: max-content;
     padding: 0px 20px 0px 20px

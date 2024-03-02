@@ -1,24 +1,26 @@
 'use strict'
 
+
+
 let gImgs = [
-    { id: 1, url: 'img/1.jpg', keywords: ['kids', 'cat'] },
-    { id: 2, url: 'img/2.jpg', keywords: ['funny', 'cat'] },
-    { id: 3, url: 'img/3.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'img/4.jpg', keywords: ['funny', 'cat'] },
-    { id: 5, url: 'img/5.jpg', keywords: ['funny', 'cat'] },
-    { id: 6, url: 'img/6.jpg', keywords: ['funny', 'cat'] },
-    { id: 7, url: 'img/7.jpg', keywords: ['funny', 'cat'] },
-    { id: 8, url: 'img/8.jpg', keywords: ['funny', 'cat'] },
-    { id: 9, url: 'img/9.jpg', keywords: ['funny', 'cat'] },
-    { id: 10, url: 'img/10.jpg', keywords: ['funny', 'cat'] },
-    { id: 11, url: 'img/11.jpg', keywords: ['funny', 'cat'] },
-    { id: 12, url: 'img/12.jpg', keywords: ['funny', 'cat'] },
-    { id: 13, url: 'img/13.jpg', keywords: ['funny', 'cat'] },
-    { id: 14, url: 'img/14.jpg', keywords: ['funny', 'cat'] },
-    { id: 15, url: 'img/15.jpg', keywords: ['funny', 'cat'] },
-    { id: 16, url: 'img/16.jpg', keywords: ['funny', 'cat'] },
-    { id: 17, url: 'img/17.jpg', keywords: ['funny', 'cat'] },
-    { id: 18, url: 'img/18.jpg', keywords: ['funny', 'cat'] }
+    { id: 1, url: 'img/1.jpg', keywords: 'leaders' },
+    { id: 2, url: 'img/2.jpg', keywords: "animals" },
+    { id: 3, url: 'img/3.jpg', keywords: "kids" },
+    { id: 4, url: 'img/4.jpg', keywords:"animals" },
+    { id: 5, url: 'img/5.jpg', keywords: "kids" },
+    { id: 6, url: 'img/6.jpg', keywords: "other" },
+    { id: 7, url: 'img/7.jpg', keywords: "kids" },
+    { id: 8, url: 'img/8.jpg', keywords: "movies" },
+    { id: 9, url: 'img/9.jpg', keywords: "kids" },
+    { id: 10, url: 'img/10.jpg', keywords: "leaders" },
+    { id: 11, url: 'img/11.jpg', keywords: "other" },
+    { id: 12, url: 'img/12.jpg', keywords: "other" },
+    { id: 13, url: 'img/13.jpg', keywords: "movies" },
+    { id: 14, url: 'img/14.jpg', keywords: "movies" },
+    { id: 15, url: 'img/15.jpg', keywords: "movies" },
+    { id: 16, url: 'img/16.jpg', keywords: "movies" },
+    { id: 17, url: 'img/17.jpg', keywords: "leaders" },
+    { id: 18, url: 'img/18.jpg', keywords: "movies" }
 ]
 
 let gMeme
@@ -33,22 +35,18 @@ function createMeme(imgId, imgUrl) {
             {
                 id: makeId(),
                 txt: 'line1',
-                size: 40,
+                size: 10,
                 color: "#FFFFFF",
-                x: 200,
-                y: 360,
-
-
+                x: 50,
+                y: 10,
             },
             {
                 id: makeId(),
                 txt: 'line2',
-                size: 40,
+                size: 10,
                 color: "#FFFFFF",
-                x: 200,
-                y: 40,
-
-
+                x: 50,
+                y: 90
             }
         ],
 
@@ -81,10 +79,10 @@ function addLine() {
     gMeme.lines.push({
         id: makeId(),
         txt: `line${gMeme.lines.length + 1}`,
-        size: 40,
+        size: 10,
         color: "#FFFFFF",
-        x: gElCanvas.width / 2,
-        y: gElCanvas.height / 2
+        x: 50,
+        y: 50
     });
 }
 
@@ -98,7 +96,8 @@ function switchColor(color) {
 }
 
 function increaseSize() {
-    gMeme.lines[gMeme.selectedLineIdx].size++
+    if (gMeme.lines[gMeme.selectedLineIdx].size < 100)
+        gMeme.lines[gMeme.selectedLineIdx].size++
 }
 
 function decreaseSize() {

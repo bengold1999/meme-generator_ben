@@ -1,13 +1,21 @@
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    
+    window.addEventListener('resize', ()=>resizeCanvas())
    
     renderGallery()
+    resizeCanvas()
 }
 
 onInit()
 
+
+function resizeCanvas() {
+    const isPhone = window.innerWidth <= 768
+    gElCanvas.width = isPhone ? window.innerWidth : window.innerWidth/2.5
+    gElCanvas.height = isPhone ? window.innerHeight : window.innerHeight/2.5
+    renderMeme()
+}
 
 function showEditor(){
     let elEditor = document.querySelector('.editor')
