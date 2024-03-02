@@ -86,6 +86,17 @@ function addLine() {
     });
 }
 
+function addEmoji(elEmo) {
+    gMeme.lines.push({
+        id: makeId(),
+        txt: elEmo.value,
+        size: 10,
+        color: "#FFFFFF",
+        x: 50,
+        y: 50
+    });
+}
+
 function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) %
         gMeme.lines.length

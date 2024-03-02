@@ -29,6 +29,9 @@ main{
     width: 100%;
 }
 
+h1{
+    font-family: fantasy;
+}
 
 
 canvas {
@@ -60,6 +63,7 @@ img:hover{
 }
 
 a{
+    font-family: fantasy;
     margin-top: 25%;
     font-size:30px;
 }

@@ -76,6 +76,11 @@ function onAddLine() {
     renderMeme()
 }
 
+function onAddEmoji(elEmo){
+    addEmoji(elEmo)
+    renderMeme()
+}
+
 function onLineTextChanged() {
     setLineTxt()
     renderMeme()

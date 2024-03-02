@@ -2,7 +2,7 @@ header.main-header {
     position: static;
     top: 0;
     z-index: 1;
-    background-color: purple;
+    background-color: #8f62e3;
     box-shadow: inset 0px -2px 0 black;
     border-radius: 50px;
     width: 100%;

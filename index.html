@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator
-</title>
+    </title>
     <link rel="stylesheet" href="cs/main.css">
     <script src="https://kit.fontawesome.com/e6caf03ad2.js" crossorigin="anonymous"></script>
 </head>
@@ -16,7 +16,7 @@
             <h1> Meme Generator
             </h1>
             <ul class="nav clean-list align-center">
-                <li class="gallery-back"><a class="gallery-back" onclick="showGallery()">gallery</a></li>
+                <li class="gallery-back"><a class="gallery-back" onclick="showGallery()">Gallery</a></li>
             </ul>
         </section>
 
@@ -24,24 +24,24 @@
     </header>
     <main>
         <section class="gallery-container">
-        <section class="Buttons-gallery">
-            <input list="keywords" id="filter" placeholder="keyword" oninput="filterImg()">
+            <section class="Buttons-gallery">
+                <input list="keywords" id="filter" placeholder="keyword" oninput="filterImg()">
 
-            <datalist id="key">
-              <option value="animals">
-              <option value="leaders">
-              <option value="movies">
-              <option value="kids">
-              <option value="other">
-            </datalist>
-            <button class="Clear" onclick="clearFilter()">🧹</button>
-            <button class="flexible" onclick="Onflexable()">i'm flexible</button>
+                <datalist id="key">
+                    <option value="animals">
+                    <option value="leaders">
+                    <option value="movies">
+                    <option value="kids">
+                    <option value="other">
+                </datalist>
+                <button class="Clear" onclick="clearFilter()">🧹</button>
+                <button class="flexible" onclick="Onflexable()">i'm flexible</button>
 
+            </section>
+            <section class="layout-gallery">
+                <section class="gallery"></section>
+            </section>
         </section>
-        <section class="layout-gallery">
-            <section class="gallery"></section>
-        </section>
-    </section>
         <section class="editor hide ">
             <section class="editor-kid flex align-center justify-content   ">
                 <div class="canvas-container">
@@ -50,15 +50,20 @@
                 <section class="user-container flex">
                     <section class="btn-user grid space-between align-center ">
                         <section>
-                        <input class="text-color" type="color" id="head" name="head" value="#e66465"
-                            oninput="onColorPicked(this.value)" />
-                        <input type="text" class=" text-meme" placeholder="type here" name="lines-meme"
-                            oninput="onLineTextChanged()">
+                            <input class="text-color" type="color" id="head" name="head" value="#e66465"
+                                oninput="onColorPicked(this.value)" />
+                            <input type="text" class=" text-meme" placeholder="type here" name="lines-meme"
+                                oninput="onLineTextChanged()">
                         </section>
                         <section>
-                        <button class="btn Add" onclick="onAddLine()">➕</button>
-                        <button class="btn delete" onclick="onDeleteLine(this)">🗑️</button>
-                        <button class="btn switch" onclick="onSwitchLine()">🔁</button>
+                            <button class="btn Add" onclick="onAddLine()">➕</button>
+                            <button class="btn delete" onclick="onDeleteLine(this)">🗑️</button>
+                            <section>
+                                <button class="btn" onclick="onAddEmoji(this)" value="🫥">🫥</button>
+                                <button class="btn" onclick="onAddEmoji(this)" value="😁">😁</button>
+                                <button class="btn" onclick="onAddEmoji(this)" value="😎">😎</button>
+                            </section>
+                            <button class="btn switch" onclick="onSwitchLine()">🔁</button>
                         </section>
                         <section>
                             <button class="btn left-alignment" onclick="onTextLeft()">
