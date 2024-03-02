@@ -19,9 +19,14 @@
     grid-row-gap: 10px;
     background-color: rgba(0, 0, 0, 0.822);
     padding: 1em;
-    width: 100%
+    width: 100%;
     
 }
+
+.arrows{
+    margin: 10px;
+}
+
 
 .text-meme{
     height: 3em;

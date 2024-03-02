@@ -6,10 +6,17 @@
     border: 2px solid  #8f62e3;
     padding: 0.625em 1.25em;
     font-size: 1em;
-    
+    border-radius: 10px;
     font-family: inherit;
     cursor: pointer;
-    
+    transition: transform .2s;
+}
+     
+
+
+
+.btn:hover{
+    transform: scale(1.02)
 }
 
 .flexible{
