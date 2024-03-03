@@ -1,46 +1,67 @@
 
-@media (max-width: 400px){
-    .editor-kid{
-  
+
+
+
+
+@media (max-width: 390px) {
+    html {
+        width: 390px;
+    }
+    
+    body {
+        width: 390px;
+    }
+        
+    
+
+    /* main{
+        width: 100%;
+    } */
+
+    .main-header{
+        width: 100%;
+    }
+    .editor-kid {
+        width: fit-content;
+        position: static;
         flex-direction: column;
         gap: 0px;
-        margin: 0;
+        margin: auto;
         padding: 0px;
         border-radius: 0;
-        width: 400px;
+        height: 100%;
+        width: 390px;
        
-       }
+       
+    }
+  
+  .btn-user{
+    width: 390px;
+  }
 
-       html{
-        width: fit-content;
-       }
-       body{
-        width: 100%;
-        
-       }
-
-   
 }
 
 
 
-@media (max-width: 980px){
-    .editor-kid{
-  
-     flex-direction: column;
-     gap: 0px;
-     margin: 0;
-     padding: 10px;
-     border-radius: 0;
-    
-    }
-    .Buttons-gallery{
+@media (max-width: 980px) {
+    .editor-kid {
+
+        flex-direction: column;
+        gap: 0px;
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
         
+
+    }
+
+    .Buttons-gallery {
+
         padding: 12px;
         margin: auto;
-       flex-direction: column;
-       row-gap: 10px    ;
-        margin-top:40px;
+        flex-direction: column;
+        row-gap: 10px;
+        margin-top: 40px;
         border-radius: 40px;
         width: fit-content;
         align-items: center;
@@ -48,7 +69,8 @@
         display: flex;
         cursor: pointer;
     }
-/*     
+
+    /*     
     header.main-header {
        
         
@@ -58,39 +80,40 @@
     .header-container .nav{
         justify-content: space-between;
     } */
-    .btn-toggle-menu{
+    .btn-toggle-menu {
         opacity: 1;
     }
 
-    footer{
-      
-        position:static ;
+    footer {
+
+        position: static;
     }
 
-    canvas{
-    width: 100%;
-      
+    canvas {
+        width: 100%;
+
     }
-   
+
     /* .header-container{
         justify-content: spa;
     }
     */
-    
 
-    header a{
+
+    header a {
         margin-top: 30px;
         font-size: 20px;
     }
-  
 
 
 
 
- .keyNames{
-    flex-direction: column;
- }
- /* .main-header .nav{
+
+    .keyNames {
+        flex-direction: column;
+    }
+
+    /* .main-header .nav{
     position: fixed;
     top: 70px;
     left: 0;
@@ -118,44 +141,45 @@
 } */
 
 
-.nav-main {
-    position: fixed;
-    top: 10.8vh;
-    right: 0;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    border-inline-start: 1px solid #ccc;
-    z-index: 1;
-    transform: translateX(100%);
-    transition: transform 0.6s, box-shadow 0.6s;
+    .nav-main {
+        position: fixed;
+        top: 10.8vh;
+        right: 0;
+        height: 100%;
+        background: rgba(181, 34, 222, 0.9);
+        border-inline-start: 1px solid #d07adb;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: transform 0.6s, box-shadow 0.6s;
+    }
+
+    .nav-main .nav {
+        flex-direction: column;
+        min-width: 100vw;
+    }
+
+    .nav-main .nav>li {
+        border-bottom: 1px solid #000000;
+    }
+
+    .nav-main .nav a {
+        display: flex;
+        justify-content: center;
+        padding: 40px 10px;
+        font-size: 1.1em;
+    }
+
+    .nav-main .nav a:hover {
+        background-color: #ffffff00;
+    }
+
+    body.menu-open .nav-main {
+        transform: translateX(0);
+        box-shadow: -4px 0px 20px rgb(red, green, blue);
+    }
+
 }
 
-.nav-main .nav {
-    flex-direction: column;
-    min-width: 100vw;
-}
-
-.nav-main .nav>li {
-    border-bottom: 1px solid #000000;
-}
-
-.nav-main .nav a {
-    display: flex;
-    justify-content: center;
-    padding: 40px 10px;
-    font-size: 1.1em;
-}
-
-.nav-main .nav a:hover {
-    background-color: #ffffff00;
-}
-
-body.menu-open .nav-main {
-    transform: translateX(0);
-    box-shadow: -4px 0px 20px rgb(red, green, blue);
-}
-
-}
 /* 
  @media (max-width: 979px) and  (min-width: 801px){
 
@@ -163,33 +187,33 @@ body.menu-open .nav-main {
 }  */
 
 
-@media (min-width: 900px){
-    .editor-kid{
-  
+@media (min-width: 900px) {
+    .editor-kid {
+
         flex-direction: row;
         gap: 10px;
-       
-        
-      
-       
-       }
 
 
-       .btn-user{
+
+
+    }
+
+
+    .btn-user {
         font-size: larger;
-       }
-
-     
-       
+    }
 
 
-       .modal{
+
+
+
+    .modal {
         font-size: 30px;
         margin-bottom: 550px;
-       }
-   
+    }
 
-       .gallery-container{
+
+    .gallery-container {
         margin-right: 15vh;
         margin-left: 15vh;
     }

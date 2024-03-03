@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-   
 
 }
 
@@ -13,8 +12,8 @@ html{
 
 body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Helvetica, sans-serif;
-    font-size:20px;
-    background: linear-gradient(to right,darkviolet,#676469,#e9e9e9);
+    /* font-size:20px; */
+    background: linear-gradient(to right,rgb(207, 116, 246),#676469,#e9e9e9);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
 
@@ -26,7 +25,7 @@ body{
 
 
 main{
-    height: 100%;
+    
     text-align: center;
     width: 100%;
 }
