@@ -2,6 +2,7 @@
 let gElCanvas
 let gCtx
 let userPassIt = false
+// const USERSAVEKEY ='savedmems'
 
 function renderMeme() {
     const selectedMeme = getMeme()
@@ -62,14 +63,24 @@ function selectedLine(line, isSelected) {
 }
 
 function onImgSelect(elImg) {
-    createMeme(elImg.id, elImg.src)
+    createMeme(elImg.id,elImg.src)
     renderMeme()
     updateUserColor()
     updateUserInput()
-    updateUserInput()
+    updateUserFont()
     showEditor()
 
 }
+function onmemeSelect(elImg) {
+    getMemeSave(elImg)
+    renderMeme()
+    updateUserColor()
+    updateUserInput()
+    updateUserFont()
+    showEditor()
+
+}
+
 
 function onAddLine() {
     addLine()
@@ -293,4 +304,15 @@ function Onflexable() {
 function OnclearFont(){
     clearFont()
     renderMeme()
+}
+
+
+function onSaveMeme(){
+    SaveMeme()
+}
+
+
+function onTypeMeme(){
+    tyoeMeme()
+    
 }

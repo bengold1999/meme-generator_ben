@@ -12,13 +12,29 @@
 
 <body>
     <header class="main-header">
-        <section class="header-container flex space-between">
+        <section class="header-container flex justify-content space-between">
             <h1> Meme Generator<i class="fa-solid fa-face-grin-tears"></i>
             </h1>
-            <ul class="nav clean-list align-center">
-                <li class="gallery-back"><a class="gallery-back" onclick="showGallery()">Gallery</a></li>
+          
+            <button class="btn-toggle-menu" onclick="toggleMenu()">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </button>
+            <div class="nav-main">
+            <ul class="nav clean-list ">
+                <li><a class="gallery-back" onclick="showGallery()">Gallery</a></li>
+                <li><a class="Save-memes" onclick="ShowSaved()">Saved</a></li>
             </ul>
+        </div>
         </section>
+
+
+            
+
+         
 
 
     </header>
@@ -35,8 +51,9 @@
                     <option value="other">
                 </datalist>
             </input>
-                <button class="Clear" onclick="clearFilter()">🧹</button>
+                <button class="Clear" onclick="onClearFilter()">🧹</button>
                 <button class="flexible" onclick="Onflexable()">i'm flexible</button>
+              <div class="keyNames"></div>
 
             </section>
             <section class="layout-gallery">
@@ -102,11 +119,9 @@
                             <button class="btn increase" onclick="onIncreaseSize()">+A</button>
                             <button class="btn decrease" onclick="onDecreaseSize()">-A</button>
                         </section>
-
+                                <button class="btn save" onclick="onSaveMeme()">SAVE</button>
                             <section class="btn " onclick="onDownloadMeme()">
                                 <span class="download">Download</span>
-
-
                         </section>
                     </section>
                 </section>
@@ -120,6 +135,7 @@
 
 
     <script src="js/services/storage.service.js"></script>
+    <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>

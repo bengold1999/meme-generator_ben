@@ -2,9 +2,10 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     window.addEventListener('resize', ()=>resizeCanvas())
-   
+    gMemesSave = loadFromStorage(USERSAVEKEY) || []
     renderGallery()
     resizeCanvas()
+    renderKeywords()
 }
 
 onInit()
@@ -29,7 +30,7 @@ function showEditor(){
 
     elGalerry.classList.add('hide')
     elGaleryContainer.classList.add('hide')
-    showMessage()
+   
 }
 
 function showGallery(){
@@ -43,4 +44,26 @@ function showGallery(){
     elEditor.classList.remove('grid')
     elEditor.classList.remove('align-center')
     // elEditor.classList.remove('flow-column')
+    renderGallery()
+}
+
+function ShowSaved(){
+    let elEditor = document.querySelector('.editor')
+    let elGalerry = document.querySelector('.layout-gallery')
+    let elGaleryContainer = document.querySelector('.gallery-container')
+    elEditor.classList.add('hide')
+    elGalerry.classList.remove('hide')
+    elGaleryContainer.classList.remove('hide')
+    // elEditor.classList.remove('flex')
+    elEditor.classList.remove('grid')
+    elEditor.classList.remove('align-center')
+    // elEditor.classList.remove('flow-column')
+    // renderGallery()
+    renderSaved()
+    
+}
+
+
+function toggleMenu(){
+    document.body.classList.toggle('menu-open')
 }

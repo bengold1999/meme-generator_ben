@@ -53,3 +53,7 @@
 .padding{
     padding: 50%;
 }
+
+.space-evenly{
+    justify-content: space-evenly;
+}

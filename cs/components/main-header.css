@@ -7,7 +7,7 @@ header.main-header {
     box-shadow: inset 0px -2px 0 black;
     border-radius: 50px;
     width: 100%;
-   
+    
     height: max-content;
     padding: 0px 20px 0px 20px;
     
@@ -15,15 +15,70 @@ header.main-header {
 }
 
 
-.nav a {
+.header-container h1{
+ 
+   
+}
+
+
+.header-container{
+    gap: 100px;
+}
+
+.nav  {
     display: flex;
-    justify-content: center;
+    
     align-items: center;
-
-  
-
+    gap: 30px;
+    
     transition: box-shadow 0.2s;
     will-change: box-shadow;
+}
+
+.nav-main{
+    display: flex;
+   margin-left: 100px;
+}
+
+
+.btn-toggle-menu{
+    opacity: 0;
+}
+
+.main-header .btn-toggle-menu {
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+.main-header .btn-toggle-menu .hamburger-lines {
+    height: 26px;
+    width: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-header .btn-toggle-menu .hamburger-lines .line {
+    height: 4px;
+    width: 100%;
+    background-color: aliceblue;
+    transition: 0.4s;
+}
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line1 {
+    rotate: -45deg;
+    transform-origin: right top;
+}
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line2 {
+    scale: 0;
+}
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line3 {
+    rotate: 45deg;
+    transform-origin: right bottom;
 }
 
 
