@@ -15,7 +15,7 @@
         <section class="header-container flex justify-content space-between">
             <h1> Meme Generator<i class="fa-solid fa-face-grin-tears"></i>
             </h1>
-          
+
             <button class="btn-toggle-menu" onclick="toggleMenu()">
                 <div class="hamburger-lines">
                     <span class="line line1"></span>
@@ -24,17 +24,18 @@
                 </div>
             </button>
             <div class="nav-main">
-            <ul class="nav clean-list ">
-                <li><a class="gallery-back" onclick="showGallery()">Gallery</a></li>
-                <li><a class="Save-memes" onclick="ShowSaved()">Saved</a></li>
-            </ul>
-        </div>
+                <ul class="nav clean-list ">
+                    <li><a class="gallery-back" onclick="showGallery()">Gallery</a></li>
+                    <li><a class="Save-memes" onclick="ShowSaved()">Saved</a></li>
+                    <li><a class="about me" onclick="showMe()">About</a></li>
+                </ul>
+            </div>
         </section>
 
 
-            
 
-         
+
+
 
 
     </header>
@@ -50,11 +51,10 @@
                     <option value="kids">
                     <option value="other">
                 </datalist>
-            </input>
+                </input>
                 <button class="Clear" onclick="onClearFilter()">🧹</button>
                 <button class="flexible" onclick="Onflexable()">i'm flexible</button>
-              <div class="keyNames"></div>
-
+                <div class="keyNames"></div>
             </section>
             <section class="layout-gallery">
                 <section class="gallery"></section>
@@ -77,7 +77,7 @@
                             <button class="btn Add" onclick="onAddLine()">➕</button>
                             <button class="btn delete" onclick="onDeleteLine(this)">🗑️</button>
                             <button class="btn switch" onclick="onSwitchLine()">🔁</button>
-                            
+
                             <section class="arrows grid">
                                 <button class="btn top padding " onclick="onLineUp(this)">⬆️</button>
                                 <section class="arrow sides flex space-between ">
@@ -94,14 +94,15 @@
                         </section>
                         <section>
                             <label for="font"></label>
-                            <input class="fonts btn" list="fonts" name="font" id="font" placeholder="font type" oninput="onChangeFont(this)">
+                            <input class="fonts btn" list="fonts" name="font" id="font" placeholder="font type"
+                                oninput="onChangeFont(this)">
                             <datalist id="fonts">
-                              <option value="Serif">
-                              <option value="fantasy">
-                              <option value="Monospace">
+                                <option value="Serif">
+                                <option value="fantasy">
+                                <option value="Monospace">
                             </datalist>
-                        </input>
-                        <button class="ClearFont btn" onclick="OnclearFont()"> Clear</button>
+                            </input>
+                            <button class="ClearFont btn" onclick="OnclearFont()"> Clear</button>
                         </section>
                         <section>
                             <button class="btn left-alignment" onclick="onTextLeft()">
@@ -114,20 +115,25 @@
                                 <i class="fa-solid fa-align-right"></i>
                             </button>
                         </section>
-                     
+
                         <section>
                             <button class="btn increase" onclick="onIncreaseSize()">+A</button>
                             <button class="btn decrease" onclick="onDecreaseSize()">-A</button>
                         </section>
-                                <button class="btn save" onclick="onSaveMeme()">SAVE</button>
-                            <section class="btn " onclick="onDownloadMeme()">
-                                <span class="download">Download</span>
+                        <button class="btn save" onclick="onSaveMeme()">SAVE</button>
+                        <section class="btn " onclick="onDownloadMeme()">
+                            <span class="download">Download</span>
                         </section>
                     </section>
                 </section>
             </section>
         </section>
         </section>
+        <div class="about-me hide">
+            <h4>Hello</h4>
+            <p>Hi, my name is Ben, 24, from Givatayim. This is my work for Sprint 2 in the Coding Academy course, hope you enjoy it</p>
+            <img src="img/271750444_7095314440486275_6184760074787290660_n.jpg" alt="me">
+        </div>
     </main>
     <footer>
 

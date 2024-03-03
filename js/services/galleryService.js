@@ -21,6 +21,8 @@ let gImgs = [
     { id: 18, url: 'img/18.jpg', keywords: "movies" }
 ]
 
+console.log(gImgs)
+
 var gKeywordSearchCountMap = gImgs.reduce((acc, img) => {
     acc[img.keywords] = (acc[img.keywords] || 0) + 1
     return acc
@@ -44,3 +46,5 @@ function clearFilterSerach() {
     renderGallery()
 
 }
+
+
