@@ -25,15 +25,16 @@
     <main>
         <section class="gallery-container">
             <section class="Buttons-gallery">
-                <input list="keywords" id="filter" placeholder="keyword" oninput="filterImg()">
+                <input class="keys" list="keys" name="keys" id="key" oninput="filterImg()">
 
-                <datalist id="key">
+                <datalist id="keys">
                     <option value="animals">
                     <option value="leaders">
                     <option value="movies">
                     <option value="kids">
                     <option value="other">
                 </datalist>
+            </input>
                 <button class="Clear" onclick="clearFilter()">🧹</button>
                 <button class="flexible" onclick="Onflexable()">i'm flexible</button>
 
@@ -73,6 +74,17 @@
                                 <button class="btn" onclick="onAddEmoji(this)" value="😁">😁</button>
                                 <button class="btn" onclick="onAddEmoji(this)" value="😎">😎</button>
                             </section>
+                        </section>
+                        <section>
+                            <label for="font"></label>
+                            <input class="fonts btn" list="fonts" name="font" id="font" placeholder="font type" oninput="onChangeFont(this)">
+                            <datalist id="fonts">
+                              <option value="Serif">
+                              <option value="fantasy">
+                              <option value="Monospace">
+                            </datalist>
+                        </input>
+                        <button class="ClearFont btn" onclick="OnclearFont()"> Clear</button>
                         </section>
                         <section>
                             <button class="btn left-alignment" onclick="onTextLeft()">

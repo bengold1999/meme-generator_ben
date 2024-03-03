@@ -3,7 +3,7 @@
 
 
 function filterImg(){
-    let search = document.getElementById('filter').value
+    let search = document.querySelector('.keys').value
      renderGallery(search)
 
 }

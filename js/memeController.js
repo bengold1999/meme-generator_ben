@@ -27,9 +27,9 @@ function drawText(line, isSelected) {
     gCtx.strokeStyle = "black"
 
     gCtx.fillStyle = line.color
-
+    const typeFont = line.font ? line.font : 'serif'
     const fontSize = gElCanvas.width * (line.size / 100)
-    gCtx.font = `${fontSize}px Arial`
+    gCtx.font = `${fontSize}px ${typeFont}`
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
@@ -66,9 +66,9 @@ function onImgSelect(elImg) {
     renderMeme()
     updateUserColor()
     updateUserInput()
-
+    updateUserInput()
     showEditor()
-   
+
 }
 
 function onAddLine() {
@@ -76,7 +76,12 @@ function onAddLine() {
     renderMeme()
 }
 
-function onAddEmoji(elEmo){
+function onChangeFont(elFont) {
+    ChangeFont(elFont)
+    renderMeme()
+}
+
+function onAddEmoji(elEmo) {
     addEmoji(elEmo)
     renderMeme()
 }
@@ -91,6 +96,7 @@ function onSwitchLine() {
     renderMeme()
     updateUserColor()
     updateUserInput()
+    updateUserFont()
 }
 
 function onIncreaseSize() {
@@ -115,6 +121,14 @@ function updateUserInput() {
     userText.value = selectedMeme.lines[selectedMeme.selectedLineIdx].txt
 }
 
+function updateUserFont() {
+    const selectedMeme = getMeme()
+    if (!selectedMeme) return
+    var userText = document.querySelector('.fonts')
+    userText.value = selectedMeme.lines[selectedMeme.selectedLineIdx].font
+}
+
+
 function updateUserColor() {
     const selectedMeme = getMeme()
     if (!selectedMeme) return
@@ -133,7 +147,7 @@ function downloadMeme() {
 
 function onDownloadMeme() {
     hideSelectedLine()
-    setTimeout(()=>{
+    setTimeout(() => {
         downloadMeme()
     }, 0)
 }
@@ -157,7 +171,7 @@ function onclickLine(ev) {
         renderMeme()
         updateUserInput()
         updateUserColor()
-
+        updateUserInput()
     }
 
 }
@@ -272,6 +286,11 @@ function onTextLeft() {
 }
 
 
-function Onflexable(){
+function Onflexable() {
     flexable()
+}
+
+function OnclearFont(){
+    clearFont()
+    renderMeme()
 }

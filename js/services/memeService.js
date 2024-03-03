@@ -6,7 +6,7 @@ let gImgs = [
     { id: 1, url: 'img/1.jpg', keywords: 'leaders' },
     { id: 2, url: 'img/2.jpg', keywords: "animals" },
     { id: 3, url: 'img/3.jpg', keywords: "kids" },
-    { id: 4, url: 'img/4.jpg', keywords:"animals" },
+    { id: 4, url: 'img/4.jpg', keywords: "animals" },
     { id: 5, url: 'img/5.jpg', keywords: "kids" },
     { id: 6, url: 'img/6.jpg', keywords: "other" },
     { id: 7, url: 'img/7.jpg', keywords: "kids" },
@@ -39,6 +39,7 @@ function createMeme(imgId, imgUrl) {
                 color: "#FFFFFF",
                 x: 50,
                 y: 10,
+                font:'Serif'
             },
             {
                 id: makeId(),
@@ -46,7 +47,8 @@ function createMeme(imgId, imgUrl) {
                 size: 10,
                 color: "#FFFFFF",
                 x: 50,
-                y: 90
+                y: 90,
+                font:'Serif'
             }
         ],
 
@@ -82,7 +84,8 @@ function addLine() {
         size: 10,
         color: "#FFFFFF",
         x: 50,
-        y: 50
+        y: 50,
+        font:'Serif'
     });
 }
 
@@ -93,7 +96,8 @@ function addEmoji(elEmo) {
         size: 10,
         color: "#FFFFFF",
         x: 50,
-        y: 50
+        y: 50,
+      
     });
 }
 
@@ -151,10 +155,21 @@ function flexable() {
 }
 
 
-function showMessage(){
+function showMessage() {
     document.querySelector('.modal').showModal()
 }
 
-function closeModal(){
+function closeModal() {
     document.querySelector('.modal').close()
+}
+
+
+function ChangeFont(elFont) {
+    gMeme.lines[gMeme.selectedLineIdx].font = elFont.value
+}
+
+function clearFont(){
+    var userText = document.querySelector('.fonts')
+    userText.value = ''
+    gMeme.lines[gMeme.selectedLineIdx].font = 'Serif'
 }
